@@ -8,8 +8,10 @@ CXXFLAGS := -std=c++17 -Wall -g \
 						-Woverloaded-virtual
 SRCS := $(wildcard ./*.cpp)
 OBJS := $(SRCS:.cpp=.out)
+PY_SRCS := $(wildcard ./*.py)
 
 all: $(OBJS)
+	@for f in $(PY_SRCS); do python $$f; done
 
 %.out: %.cpp
 	@${CXX} ${CXXFLAGS} $< -o $@

@@ -3,28 +3,24 @@
 using namespace std;
 
 unsigned long long quantum_traverse(const vector<string> &manifold,
-                                    const size_t &beam_position,
-                                    const int &curr_line = 0) {
-
-  static unsigned long long timelines{1};
-
-  if (static_cast<size_t>(curr_line) >= manifold.size() &&
-      beam_position < manifold[curr_line].size()) {
-    return timelines;
+                                    const size_t &start) {
+  vector<unsigned long long> dp(manifold[0].size(), 0);
+  dp[start] = 1;
+  for (size_t i = 1; i < manifold.size(); i++) {
+    for (size_t j = 0; j < dp.size(); j++) {
+      if (manifold[i][j] == '^') {
+        dp[j - 1] += dp[j];
+        dp[j + 1] += dp[j];
+        dp[j] = 0;
+      }
+    }
   }
 
-  switch (manifold[curr_line][beam_position]) {
-  case '^':
-    quantum_traverse(manifold, beam_position - 1, curr_line + 1);
-    timelines++;
-    quantum_traverse(manifold, beam_position + 1, curr_line + 1);
-    break;
-  case '.':
-    quantum_traverse(manifold, beam_position, curr_line + 1);
-    break;
+  unsigned long long sum{0};
+  for (const auto &e : dp) {
+    sum += e;
   }
-
-  return timelines;
+  return sum;
 }
 
 int main() {
@@ -38,7 +34,7 @@ int main() {
   unsigned long long timelines{};
   for (size_t i = 0; i < manifold[0].size(); i++) {
     if (manifold[0][i] == 'S') {
-      timelines = quantum_traverse(manifold, i, 1);
+      timelines = quantum_traverse(manifold, i);
       break;
     }
   }

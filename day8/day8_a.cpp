@@ -86,7 +86,10 @@ public:
   priority_queue<Pair, vector<Pair>, PairCmp> pq{};
 
   ClosestPoints(const vector<Point> &boxes) : pts{boxes}, best_pair({0, 0}) {
-    closest();
+    int n = static_cast<int>(pts.size());
+    while (static_cast<int>(pq.size()) <= (n * (n - 1) / 2)) {
+      closest();
+    }
   };
 
   void closest() {

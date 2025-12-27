@@ -86,7 +86,10 @@ public:
   priority_queue<Pair, vector<Pair>, PairCmp> pq{};
 
   ClosestPoints(const vector<Point> &boxes) : pts{boxes}, best_pair({0, 0}) {
-    closest();
+    int n = static_cast<int>(pts.size());
+    while (static_cast<int>(pq.size()) <= (n * (n - 1) / 2)) {
+      closest();
+    }
   };
 
   void closest() {
@@ -229,32 +232,6 @@ int main() {
   ClosestPoints cp(boxes);
   UnionFind uf(boxes.size());
 
-  pair<int, int> prev = {-1, -1};
-  for (int i = 0; i < 1000 && !cp.pq.empty(); i++) {
-    Pair p = cp.pq.top();
-    cp.pq.pop();
-
-    if (p.pt1 > p.pt2) {
-      swap(p.pt1, p.pt2);
-    }
-
-    // NOTE: handle duplicates
-    pair<int, int> curr = {p.pt1, p.pt2};
-    if (curr == prev) {
-      i--;
-      continue;
-    }
-
-    uf.union_sets(p.pt1, p.pt2);
-
-    prev = curr;
-
-    // cout << "[" << p.distance << "]" << "Connecting circuits " << p.pt1 << "
-    // and " << p.pt2 << "\n";
-  }
-
-  cout << "a ans: " << uf.ans() << "\n";
-
   while (!cp.pq.empty()) {
     Pair p = cp.pq.top();
     cp.pq.pop();
@@ -263,18 +240,10 @@ int main() {
       swap(p.pt1, p.pt2);
     }
 
-    // NOTE: handle duplicates
-    pair<int, int> curr = {p.pt1, p.pt2};
-    if (curr == prev) {
-      continue;
-    }
-
     uf.union_sets(p.pt1, p.pt2);
 
-    prev = curr;
-
     if (uf.count_sets() == 1) {
-      cout << "b ans: " << boxes[p.pt1].x * boxes[p.pt2].x << "\n";
+      cout << boxes[p.pt1].x * boxes[p.pt2].x << "\n";
       return EXIT_SUCCESS;
     }
   }

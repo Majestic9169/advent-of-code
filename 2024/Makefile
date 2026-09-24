@@ -1,5 +1,5 @@
 CXX := g++
-CXXFLAGS := -std=c++23 -Wall -g \
+CXXFLAGS := -std=c++20 -Wall -g \
 						-Wextra -Wshadow \
 						-Wconversion -Wunreachable-code \
 						-Wfloat-equal -Weffc++ \

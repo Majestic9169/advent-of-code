@@ -32,5 +32,5 @@ int main() {
     // printf("%3d [%c%d] %2d to %2d\n", password, dir, distance, old_count,
     // count);
   }
-  cout << "FINAL PASSWORD: " << password << endl;
+  cout << password << endl;
 }

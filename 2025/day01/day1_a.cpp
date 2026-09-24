@@ -21,5 +21,5 @@ int main() {
     if (count == 0)
       password++;
   }
-  cout << "FINAL PASSWORD: " << password << endl;
+  cout << password << endl;
 }

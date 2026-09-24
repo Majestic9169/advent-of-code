@@ -32,7 +32,7 @@ Most of my solutions could absolutely be better, if you have any suggestions ple
 
 - Day 2 Part B
 - Day 8 Part B
-- and Day 12
+- and Day 12 (fast but technically wrong)
 
 are especially bad
 
@@ -42,51 +42,41 @@ To run all the solutions together simply
 
 ```bash
 ❯ cd 2025/
-❯ make
-make[1]: Entering directory '/home/subzcuber/Downloads/acads/AoC/2025/day1'
-./day1_a.out
+❯ make all
+❯ make run
+=== day01/ ===
 1180
-./day1_b.out
 6892
-make[1]: Entering directory '/home/subzcuber/Downloads/acads/AoC/2025/day2'
+=== day02/ ===
 22062284697
 46666175279
-make[1]: Entering directory '/home/subzcuber/Downloads/acads/AoC/2025/day3'
+=== day03/ ===
 17155
 169685670469164
-make[1]: Entering directory '/home/subzcuber/Downloads/acads/AoC/2025/day4'
-./day4_a.out
+=== day04/ ===
+1493
 9194
-make[1]: Entering directory '/home/subzcuber/Downloads/acads/AoC/2025/day5'
+=== day05/ ===
 840
 359913027576322
-make[1]: Entering directory '/home/subzcuber/Downloads/acads/AoC/2025/day6'
-./day6_a.out
+=== day06/ ===
 6295830249262
-./day6_b.out
 9194682052782
-make[1]: Entering directory '/home/subzcuber/Downloads/acads/AoC/2025/day7'
-./day7_a.out
+=== day07/ ===
 1619
-./day7_b.out
 23607984027985
-make[1]: Entering directory '/home/subzcuber/Downloads/acads/AoC/2025/day8'
-./day8_a.out
+=== day08/ ===
 72150
-./day8_b.out
 3926518899
-make[1]: Entering directory '/home/subzcuber/Downloads/acads/AoC/2025/day9'
+=== day09/ ===
 4745816424
 1351617690
-make[1]: Entering directory '/home/subzcuber/Downloads/acads/AoC/2025/day10'
+=== day10/ ===
 449
 17848
-make[1]: Entering directory '/home/subzcuber/Downloads/acads/AoC/2025/day11'
-./day11_a.out
+=== day11/ ===
 603
-./day11_b.out
 380961604031372
-make[1]: Entering directory '/home/subzcuber/Downloads/acads/AoC/2025/day12'
-./day12_a.out
+=== day12/ ===
 495
 ```

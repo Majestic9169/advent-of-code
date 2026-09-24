@@ -1,8 +1,22 @@
 DAYS := $(sort $(dir $(wildcard */.)))
 
-all: ${DAYS}
+.PHONY: all run bench ${DAYS}
 
-${DAYS}:
-	@cd $@ && make && make clean
+all: run
 
-.PHONY: all ${DAYS}
+run:
+	@for day in ${DAYS}; do \
+		echo "=== $$day ==="; \
+		${MAKE} -C $$day || exit 1; \
+	done
+
+BENCH_CMDS := $(shell for d in day*; do echo "'make -C $$d run'"; done)
+
+bench:
+	hyperfine --warmup 1 --style full $(BENCH_CMDS)
+
+clean:
+	@for day in ${DAYS}; do \
+		echo "=== $$day ==="; \
+		${MAKE} -C $$day clean || exit 1; \
+	done

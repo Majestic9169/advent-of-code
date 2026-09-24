@@ -14,7 +14,24 @@ and you get a well-deserved break.
 
 Most of my solutions could absolutely be better, if you have any suggestions please feel free to raise an issue 
 
-- Day 9 Part 2
+| Command | Mean [ms] | Min [ms] | Max [ms] | Relative |
+|:---|---:|---:|---:|---:|
+| `day01 ` | 6.8 ± 0.6 | 5.3 | 8.8 | 1.23 ± 0.16 |
+| `day02 ` | 6583.3 ± 155.6 | 6321.5 | 6896.2 | 1191.63 ± 124.92 |
+| `day03 ` | 68.3 ± 2.1 | 65.1 | 75.6 | 12.36 ± 1.32 |
+| `day04 ` | 10.5 ± 0.7 | 8.8 | 12.2 | 1.90 ± 0.23 |
+| `day05 ` | 63.2 ± 2.3 | 58.4 | 70.6 | 11.44 ± 1.24 |
+| `day06 ` | 7.1 ± 0.6 | 5.5 | 8.6 | 1.28 ± 0.17 |
+| `day07 ` | 6.9 ± 0.6 | 5.2 | 9.0 | 1.24 ± 0.17 |
+| `day08 ` | 686.0 ± 35.7 | 633.6 | 753.4 | 124.17 ± 14.23 |
+| `day09 ` | 15.1 ± 0.8 | 13.2 | 18.1 | 2.74 ± 0.31 |
+| `day10 ` | 1238.5 ± 29.3 | 1195.7 | 1307.4 | 224.18 ± 23.50 |
+| `day11 ` | 9.0 ± 0.9 | 6.7 | 12.0 | 1.62 ± 0.23 |
+| `day12 ` | 5.5 ± 0.6 | 4.3 | 7.2 | 1.00 |
+
+
+- Day 2 Part B
+- Day 8 Part B
 - and Day 12
 
 are especially bad
@@ -73,5 +90,3 @@ make[1]: Entering directory '/home/subzcuber/Downloads/acads/AoC/2025/day12'
 ./day12_a.out
 495
 ```
-
-(i think i messed up and solved day4b in the day4a file, whoops)
